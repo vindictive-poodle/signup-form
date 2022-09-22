@@ -143,4 +143,24 @@ button:active {
   visibility: visible;
 }
 
+@media only screen 
+  and (min-device-width:414px) 
+  and (max-device-height:896px) 
+  and (-webkit-device-pixel-ratio:2),
+  screen and (min-device-width:360px)
+  and (max-device-height:740px)
+  and (-webkit-device-pixel-ratio:4),
+  screen and (min-device-width:393px)
+  and (max-device-height:851px)
+  and (-webkit-device-pixel-ratio:2.75),
+  screen and (min-device-width:375px)
+  and (max-device-height:812px)
+  and (-webkit-device-pixel-ratio:3),
+  screen and (min-device-width:412px)
+  and (max-device-height:914px)
+  and (-webkit-device-pixel-ratio:2.625) {
+  body {
+    background-size: 150%;
+  }
+}
 
