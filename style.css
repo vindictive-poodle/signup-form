@@ -9,8 +9,10 @@
 
 body {
   background-image: url('./imgs/tea_one.jpg');
-  background-size: 120%;
+  background-size: clamp(80rem, 150%, 150rem);
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -25,7 +27,7 @@ body {
   font-family: 'Miniver';
   font-style: cursive;
   font-weight: 400;
-  font-size: 8rem;
+  font-size: clamp(2rem, 14vw, 8rem);
   height: 9rem;
   display: flex;
   justify-content: center;
@@ -90,7 +92,7 @@ button {
   border: none;
   width: 100%;
   height: 200px;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0);
   color: white;
   font-size: 3rem;
 }
@@ -143,24 +145,14 @@ button:active {
   visibility: visible;
 }
 
-@media only screen 
-  and (min-device-width:414px) 
-  and (max-device-height:896px) 
-  and (-webkit-device-pixel-ratio:2),
-  screen and (min-device-width:360px)
-  and (max-device-height:740px)
-  and (-webkit-device-pixel-ratio:4),
-  screen and (min-device-width:393px)
-  and (max-device-height:851px)
-  and (-webkit-device-pixel-ratio:2.75),
-  screen and (min-device-width:375px)
-  and (max-device-height:812px)
-  and (-webkit-device-pixel-ratio:3),
-  screen and (min-device-width:412px)
-  and (max-device-height:914px)
-  and (-webkit-device-pixel-ratio:2.625) {
-  body {
-    background-size: 150%;
-  }
-}
 
+@media only screen 
+  and (min-device-width:1024px)
+  and (max-device-height:1366px)
+  and (orientation: landscape)
+  and (-webkit-device-pixel-ratio:2)
+  and (hover: none) {
+    body {
+      background: goldenrod;
+    }
+  }
