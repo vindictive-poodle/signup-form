@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-Up Form</title>
+  <link href='./style.css' rel='stylesheet'> <script src='./script.js' defer></script>
+  <script src='./script.js' defer></script>
+</head>
+<body>
+  <div class='left-page'>
+    <header>Three Tea</header>
+  </div>
+  <div class='right-page'>
+    <div class='description'>
+      Create an account for the latest news and deals
+      at <span class='logo'>Three Tea</span>. Get exclusive offers and first dibs
+      on our newly stocked and restocked items, as well
+      as collect reward points toward future purchases.
+    </div>
+    <form id='sign-up-form' action=''>
+      <div class='form-container'>
+        <div>
+          <label for='fname'>first name:</label>
+          <input type='text' id='fname' name='fname' required placeholder='first name'>
+          <span></span>
+        </div>
+        <div>
+          <label for='lname'>last name:</label>
+          <input type='text' id='lname' name='lname' required placeholder='last name'>
+          <span></span>
+        </div>
+        <div>
+          <label for='email'>email:</label>
+          <input type='email' id='email' name='email' required placeholder='email'>
+          <span></span>
+        </div>
+        <div>
+          <label for='tel'>phone number:</label>
+          <input type='tel' id='tel' name='tel' required placeholder='phone #'>
+          <span></span>
+        </div>
+        <div>
+          <label for='password'>password:</label>
+          <input type='password' id='password' name='password' required placeholder='password'>
+          <span></span>
+        </div>
+        <div>
+          <label for='cfm-password'>confirm password:</label>
+          <input type='password' id='cfm-password' name='cfm-password' required placeholder='confirm password'>
+          <span></span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div form='sign-up-form'>
+    <button type='submit'>create account</button>
+  </div>
+</body>
+</html>

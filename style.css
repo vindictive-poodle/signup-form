@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cookie&family=Great+Vibes&family=Norican&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Miniver&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('./imgs/tea_one.jpg');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.description {
+  display: none;
+}
+
+.left-page {
+  flex: 1 0 auto;
+  font-family: 'Miniver';
+  font-style: cursive;
+  font-weight: 400;
+  font-size: 8rem;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-page {
+  flex: 1 0 auto;
+  padding-left: 8vh;
+  padding-right: 8vh;
+}
+
+label {
+  display: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-family: 'Miniver';
+  font-style: cursive;
+  color: black;
+  opacity: 50%;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form-container > div {
+  width: 100%;
+}
+
+/*strange hack to stop the webkit auto complete from changing
+the set background color */
+.form-container > div > input:-webkit-autofill {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+.form-container > div > input {
+  appearance: none;
+  width: 100%;
+  height: 9rem;
+  background-color: rgba(255,105,180, 0.9);
+  margin-bottom: 40px;
+  padding: 10px 30px;
+  border: 8px solid black;
+  font-family: 'Miniver';
+  font-style: cursive;
+  font-size: 3.2rem;
+  transition: 0.2s box-shadow;
+}
+
+.form-container > div > input[type='password'] {
+  font-family: sans-serif;
+  font-size: 3.rem;
+}
+button {
+  flex: 2 0 auto;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  font-size: 3rem;
+}
+
+button:active {
+  color: rgba(255,105,180);
+
+}
+
+.form-container > div > input:focus {
+  appearance: none;
+  border: 8px solid goldenrod;
+  box-shadow: inset 3px 3px 28px 2px #660033; 
+}
+.form-container > div > input:valid {
+  background-color: rgba(255,105,180, 0.9);
+}
+
+
+.form-container > div > span {
+  position: relative;
+}
+.form-container > div > input ~ span::before {
+  position: absolute;
+  content: ' ';
+  width: 10px;
+  height: 10px;
+  visibility: hidden;
+}
+
+.form-container > div > input:valid ~ span::before {
+  position: absolute;
+  font-size: 3rem;
+  left: 15px;
+  bottom: 45px;
+  color: hotpink;
+  content: '✓';
+  font-size: 3.5rem;
+  visibility: visible;
+}
+
+.form-container > div > input:not(:placeholder-shown):invalid ~ span::before {
+  position: absolute;
+  font-size: 3rem;
+  left: 15px;
+  bottom: 45px;
+  color: red;
+  content: '✖';
+  font-size: 3.5rem;
+  visibility: visible;
+}
+
+
