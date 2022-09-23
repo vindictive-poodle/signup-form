@@ -300,6 +300,17 @@ button:active {
       visibility: hidden;
     }
 
+    div > label {
+      position: relative;
+    }
+    div > label > span {
+      position: absolute;
+      color: red;
+      font-size: 1.8rem;
+      font-family: Times;
+      top: -10px;
+    }
+
     .form-container > div > input:not(:placeholder-shown):invalid ~ span[class='pwd-error-msg']::before {
       position: absolute;
       content: '* passwords do not match';
@@ -308,8 +319,8 @@ button:active {
       width: 200px;
       left: -163px;
       top: -30px;
-
     }
+
     button {
       --btn-width: 35rem; 
       position: absolute;
