@@ -145,14 +145,126 @@ button:active {
   visibility: visible;
 }
 
-
-@media only screen 
-  and (min-device-width:1024px)
-  and (max-device-height:1366px)
-  and (orientation: landscape)
-  and (-webkit-device-pixel-ratio:2)
-  and (hover: none) {
+@media only screen
+  and (min-width: 961px) 
+  and (orientation: landscape) {
     body {
-      background: goldenrod;
+      display: block;
+      background: none;
+      height: var(--body-height);
     }
-  }
+
+    :root {
+      --left-pg-size: 40vw;
+      --right-pg-size: calc(100vw - var(--left-pg-size));
+      --body-height: clamp(900px, 100vh, 400rem); 
+    }
+
+    .description {
+      display: block;
+      font-size: 2rem;
+      font-family: 'Josefin Sans';
+      font-weight: 600;
+      padding: 40px calc(3rem + 1vw) calc(var(--body-height) / 16);
+    }
+
+    header {
+      padding: 45vh 0 0 25%;
+    }
+
+    .left-page {
+      width: var(--left-pg-size);
+      font-size: clamp(1rem, 5vw, 7rem);
+      display: block;
+      height: var(--body-height);
+      background-image: url('./imgs/tea_one.jpg');
+      background-size: clamp(40rem, 175%, 160rem);
+      background-position: cover;
+      background-repeat: no-repeat;
+    }
+
+    .right-page {
+      position: absolute;
+      width: var(--right-pg-size);
+      top: 0;
+      padding-top: 5vh;
+      padding-left: 0;
+      padding-right: 0;
+      left: var(--left-pg-size);
+      height: var(--body-height);
+      background-color: papayawhip;
+    }
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(var(--right-pg-size));
+      margin-top: calc(var(--body-height) / 4 - 200px);
+      padding-top: 30px;
+    }
+
+    .sign-up-form {
+      width: var(--right-pg-size);
+    }
+
+    .form-container > div {
+      flex: 1 0 auto;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container > div > label {
+      display: inline-block;
+      width: 18rem;
+      font-family: 'Josefin Sans';
+      font-size: 2rem;
+    }
+
+    .form-container > div > input {
+      height: 3.8rem;
+      font-family: 'Josefin Sans';
+      display: inline-block;
+      width: 18rem;
+      border: 2px solid black;
+      font-size: 2rem;
+    }
+
+    input::placeholder {
+      visibility: hidden;
+    }
+
+    .form-container > div > input:focus {
+      border: 2px solid goldenrod;
+    }
+
+    .form-container > div > input:valid ~ span::before,
+    .form-container > div > input:not(:placeholder-shown):invalid ~ span::before {
+      top: -95px;
+      left: 105px;
+      font-size: 2.5rem;
+    }
+
+    .form-container > div > input:valid ~ span::before {
+      color: turquoise;
+    }
+
+    .form-container > div > input:not(:placeholder-shown):invalid ~ span::before {
+      color: purple;
+    }
+
+    button {
+      --btn-width: 35rem; 
+      position: absolute;
+      width: var(--btn-width);
+      height: clamp(1.8rem, 6vh, 4rem);
+      font-size: clamp(1.3rem, 3vh, 2rem);
+      top: clamp(850px, calc(var(--body-height) - 110px), 300rem);
+      left: calc(var(--left-pg-size) + 
+      calc(var(--right-pg-size) / 2 - 
+      var(--btn-width) / 2));
+    }
+
+}
