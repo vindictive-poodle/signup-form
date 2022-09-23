@@ -17,6 +17,8 @@ function confirmEqual() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const pwd = document.getElementById('cfm-password');
-  pwd.addEventListener('input', confirmEqual);
+  const userPassword = document.getElementById('password');
+  const confirmPassword = document.getElementById('cfm-password');
+  userPassword.addEventListener('input', confirmEqual);
+  confirmPassword.addEventListener('input', confirmEqual);
 });
