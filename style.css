@@ -166,7 +166,6 @@ button:active {
   position: absolute;
   font-size: 3.5rem;
   color: red;
-  left: 750px;
 }
 
 @media only screen
@@ -184,6 +183,9 @@ button:active {
       --body-height: clamp(900px, 100vh, 400rem); 
     }
 
+    .mobile-asterik {
+      display: none;
+    }
     .description {
       display: block;
       font-size: 2rem;
